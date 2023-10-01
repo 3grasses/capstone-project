@@ -2,32 +2,28 @@
 
 <div dir='ltr'>
 
-*It is a collaboration with Nattapol Hirattanapan, Zelin Zheng, Vivian Ying Ying Tong, Ma Kristin Ysabel Dela Cruz, and Ziming Fang for the Data Science Capstone Project in S1 2023 at the University of Sydney, Australia.*
+*This is a collaboration with Nattapol Hirattanapan, Zelin Zheng, Vivian Ying Ying Tong, Ma Kristin Ysabel Dela Cruz, and Ziming Fang for the Data Science Capstone Project in S1 2023 at the University of Sydney, Australia.*
 
 (add vedio)
 
-This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The simulation enivronment is created by the `highway-env` in `gymnasium` (Leurent *et al.*, 2018) under continuous action space. **The ego vehicle is able to learn to avoid collisions through iterative learning and reaches a stable state after training.**
+This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The simulation enivronment is created by the `highway-env` in `gymnasium` (Leurent *et al.*, 2018) under continuous action space. **The agent is able to learn to avoid collisions through iterative learning and reaches a stable state after training.**
 
-DDPG is a deep reinforcement learning algorithm that combines the essence of Deep Q-Network (DQN) and Deterministic Policy Gradient (DPG) but with extensions. It preserves the features of experience replay buffer and seperate target networks in DQN to stabilize training process and reduce data correlation. However, unlike DQN which maps the Q-value function solely, DDPG uses an Actor-Critic network to learn the Q-value function and the policy concurrently to deal with continuous action space. More detailed explanations of the theoretical background of this are providied in `DDPG-workflow.md` in case of your interest. In addition, **the adoption of the deterministic policy in DDPG allows it to reuse previous experience to update the networks and calculate gradients more efficiently, which is the major difference between it and the stochastic policy of Advantage Actor Critic (A2C).**
+DDPG is a deep reinforcement learning algorithm that combines the essence of Deep Q-Network (DQN) and Deterministic Policy Gradient (DPG) but with extensions. It preserves the features of experience replay buffer and seperate target networks in DQN to stabilize training process and reduce data correlation. However, unlike DQN which maps the Q-value function solely, DDPG uses an Actor-Critic network to learn the Q-value function and the policy concurrently to deal with continuous action space. More detailed explanations of the theoretical background of this are providied in `DDPG-workflow.md` in case of your interest. In addition, **the adoption of the deterministic policy in DDPG allows it to reuse previous experience to update the networks and calculate gradients more efficiently, which is the major difference between it and the stochastic policy of Advantage Actor Critic (A2C).** In this project, the DDPG method is explored due to the choice of continuous action space. 
 
-In this project, the continuous action space is chosen to make the environment closer to the reality, so the DDPG algorithm hence becomes one of the best candidates of our choice. 
+Compared to previous studies, the significance of this project includes:
 
-The significance of this project compared to previous studies that aslo uses the `highway-env` includes:
-
-- Use continuous action space to increase the complexity of the enivronment.
+- Use continuous action space to increase the complexity of the enivronment and its potential for real-world applications.
 - Apply DDPG method to autonomous driving and optimize it on reward gain.
 - Introduce the concept of social awareness to make the agent adhere to realistic human driving behaviors or real-world traffic regulations, such as adhereing to safe sopping distance or speed limits.
 
-Note that the code provided here is already the version after optimization, and it was proved to outperform the A2C model in `stable-baselines` by more than 400% in terms of the average test reward.
+Note that the code provided here is already the version after optimization, and it is proved to outperform the A2C model in `stable-baselines` by more than 400% in terms of average test reward.
 
 ## Content
 
-There are five files inlcuded:
-
 - **ddpg.py**: The main structure of the DDPG algorithm.
 - **noise.py**: The exploration noise added to the action output by the algorithm.
-- **networks.py**: The neural network forming the Actor and Critic networks used in the DDPG algorithm.
-- **main.py**: The methods used to train and evaluate the performance of the DDPG algorithm.
+- **networks.py**: The network structure which forms the Actor and Critic networks used in the DDPG algorithm.
+- **main.py**: The methods for training and evaluating the performance of the DDPG algorithm.
 - **utils.py**: Other axuliary functions, e.g., plotting, etc.
 
 ## Settings
