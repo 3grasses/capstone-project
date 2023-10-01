@@ -1,16 +1,20 @@
 # Implementation of Deep Deterministic Policy Gradient (DDPG) Method on Autonomous Vehicle within the Highway-env 
 
-*This project is a collaboration with Nattapol Hirattanapan, Zelin Zheng, Vivian Ying Ying Tong, Ma Kristin Ysabel Dela Cruz, and Ziming Fang for the Data Science Capstone Project in S1 2023 at the University of Sydney, Australia.*
+*It is a collaboration with Nattapol Hirattanapan, Zelin Zheng, Vivian Ying Ying Tong, Ma Kristin Ysabel Dela Cruz, and Ziming Fang for the Data Science Capstone Project in S1 2023 at the University of Sydney, Australia.*
 
-It implements and optimizes an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG) method. The driving scenarios is simulated by the highway-env porvided by gym (ref:) with continuous action space. The ego vehicle, which is denoted by blue color, is able to learn to avoid collisions through iterative learning and reaches a stable state after training.
+(add vedio)
 
-The significance of this project includes:
+This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG) method. The enivronment is simulated by the `highway-env` in `gymnasium` (Leurent *et al.*, 2018) under continuous action space. **The ego vehicle is able to learn to avoid collisions through iterative learning and reaches a stable state after training.**
+
+DDPG is a deep reinforcement learning algorithm that combines the essence of Deep Q-Network (DQN) and Deterministic Policy Gradient (DPG) but with more extensions. It preserves the design of experience replay buffer and seperate target networks in DQN to stabilize training process and reduce data correlation. However, unlike DQN which only maps the Q-value function, DDPG also uses an Actor-Critic Network to learn the Q-value function and the policy concurrently to deal with continuous action space. The idea behind is that the Actor network learns the policy that determines an action for a given state and the Critic network learns the Q-value function that evaluates the chosen action, and the result is then used to improve the Actor network. In addition, the adaption of deterministic policy makes it able to reuse previous experience to update the network compared to the stochastic policy in Advantage Actor Critic (A2C).
+
+The implication of this project includes:
 
 - Use the continuous action space to make the enivronment closer to the reality.
 - Adapt DDPG framework which can make the learning efficiency more efficient and imrpoved comapred to baseline model.
 - Introduced the concept of social awareness to make the driver's behavior adhere to real scenarios, such as slowing down when geeting too close to front vehicles.
 
-The DDPG was chosen due to the fact that. The model performance was compared to A2C model provided by stable-baselines and improved more than 400% in terms of average test reward.
+Note that the code provided here is already the version after optimization, and it was proved to outperform the A2C model provided by stable-baselines more than 400% in terms of average test reward.
 
 ## Content
 
