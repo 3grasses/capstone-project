@@ -4,7 +4,7 @@
 
 (add vedio)
 
-This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The simulation enivronment is created by the `highway-env` in `gymnasium` (Leurent *et al.*, 2018) under continuous action space. ***The agent is trained under an environment simulated by the highway-env package (Leurent *et al.*, 2018) in gynasium under continuous space. It is able to learn prevent collisions through iterative learning and reaches a stable state meanwhile maintainging realistic human driving behaviors.***
+This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The agent is trained under an environment simulated by the highway-env package (Leurent *et al.*, 2018) in gynasium and learns to avoid collisions through iterative learning meanwhile maintain realistic human driving behaviors.
 
 DDPG is a deep reinforcement learning algorithm that combines the essence of Deep Q-Network (DQN) and Deterministic Policy Gradient (DPG). It preserves the features of experience replay buffer and seperate target networks in DQN to stabilize training process and reduce data correlation. However, unlike DQN which maps the Q-value function solely, DDPG uses an Actor-Critic network to learn the Q-value function and the policy concurrently to deal with continuous action space. More detailed explanations of the theoretical background of this are provided in `DDPG-workflow.pdf` in case of your interest. In addition, ***the adoption of the deterministic policy in DDPG allows it to reuse previous experience to update the networks and calculate gradients more efficiently, which is the major difference between it and the stochastic policy of Advantage Actor Critic (A2C).*** In this project, the DDPG method is explored due to the choice of continuous action space. 
 
@@ -27,16 +27,16 @@ Note that the code provided here is already the version after optimization, and 
 ## Settings
 
 #### Environment
-A continuous action space which provides choices of acceleration and steering angle is adopted. However, the range of steering range is confined to [-30, 30] degree based on the real-world scenario, and the ***complete*** settings of the environment configuration can be found in `main.py`.
+A continuous action space which provides choices of acceleration and steering angle is adopted. However, the range of steering range is confined to [-30, 30] degree based on the real-world scenario. For more information of the configuration of the environment, it is explicitly stated in `main.py` and can be customized depending on applications.
 
-#### Reward Function
-The reward functions are modified in response to the choice of continuous action space. Several different methods were applied to prevent ego vehicles from spinning, moving backward, or remaining in an unrealistic speed.
+#### Reward function
+The reward functions are modified in response to the choice of continuous action space. Different strategies are applied to prevent the agent from spinning, moving backward, or other unexpected behaviors and encourage to adhere to real-world regulations or diriving behaviors.
 
 #### Training
-The training time is 3,000 epochs with 300 maximum steps in each epoch to prevent overloading. The networks are updated at every step once the experiece replay buffer, which is of size 25000, is full. The type of exploration noise and learning rate scheduler is determined based on the optimization result, and more details can be referred to `ddpg.py`.
+The entire training takes 3,000 epochs with 300 maximum steps in each epoch to prevent overload. The networks are updated every step once the experiece replay buffer, which has a size of 25000, is full. The type of exploration noise and learning rate scheduler are determined based on the optimization result, and the choices of the relevant parameters can be found in `ddpg.py`.
  
 #### Evaluation
-The metric used to evaluate the model perforamnce is the average reward over 30 epochs after removing regulations. The maximum step is extended to 500 epochs when evaluation for an unbiased result.
+Mean of average test reward is used to evaluate the model performance in this project. It is calculated by taking the mean of the average reward obtained under each epoch for 30 runs. Note that the maximum step in each epoch is extended to 500 during evaluation in order to obtain a more generalized result.
 
 ## Reference
 
