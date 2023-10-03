@@ -2,15 +2,16 @@
 
 *This is a collaboration with Nattapol Hirattanapan, Zelin Zheng, Vivian Ying Ying Tong, Ma Kristin Ysabel Dela Cruz, and Ziming Fang for the Data Science Capstone Project in S1 2023 at the University of Sydney, Australia.*
 
+This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The agent is trained under an environment simulated by the highway-env package (Leurent *et al.*, 2018) in gynasium and learns to avoid collisions through iterative learning meanwhile maintain realistic human driving behaviors.
+
 <br>
 
 <p align="center">
 <img src="https://github.com/3grasses/capstone-project/assets/146526540/56ad4c01-73b2-49ee-acc0-6e5ee5473c6f">
+ <br>
+ <em> The learning outcome of the proposed DDPG algorithm. </em>
 </p>
 
-<br>
-
-This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The agent is trained under an environment simulated by the highway-env package (Leurent *et al.*, 2018) in gynasium and learns to avoid collisions through iterative learning meanwhile maintain realistic human driving behaviors.
 
 DDPG is a deep reinforcement learning algorithm that combines the essence of Deep Q-Network (DQN) and Deterministic Policy Gradient (DPG). It preserves the features of experience replay buffer and seperate target networks in DQN to stabilize training process and reduce data correlation. However, unlike DQN which maps the Q-value function solely, DDPG uses an Actor-Critic network to learn the Q-value function and the policy concurrently to deal with the continuous action space. More detailed explanations of the theoretical background of this are provided in `DDPG-workflow.pdf` in case of your interest. In addition, the adoption of the deterministic policy in DDPG allows it to reuse previous experience to update the networks and accelearate the learning if a continuous action space is used, which is an advantage over the stochastic policy used in other Actor-Critic methods like Advantage Actor Critic (A2C). In this project, the DDPG method is explored due to the choice of continuous action space. 
 
