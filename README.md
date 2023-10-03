@@ -27,10 +27,10 @@ Note that the code provided here is already the version after optimization, and 
 ## Settings
 
 #### Environment
-A continuous action space which provides choices of acceleration and steering angle is adopted. However, the range of steering range is confined to [-30, 30] degree based on the real-world scenario. For more information of the configuration of the environment, it is explicitly stated in `main.py` and can be customized depending on applications.
+A continuous action space which provides choices of acceleration and steering angle is adopted. However, the range of steering range is confined to [-30, 30] degree based on the real-world scenario. For more information of the enivornmnet configuration such as lane numbers and traffic density, it is defined in `main.py` and can be customized based on requirements.
 
 #### Reward function
-The reward functions are modified in response to the choice of continuous action space. Different strategies are applied to prevent the agent from spinning, moving backward, or other unexpected behaviors and encourage to adhere to real-world regulations or diriving behaviors.
+Due to the choice of the continuous action space, different strategies are applied to prevent the agent from spinning, moving backward, or taking other unexpected actions and encourage it to adhere to the real-world regulations and diriving behaviors as mentioned above.
 
 #### Training
 The entire training takes 3,000 epochs with 300 maximum steps in each epoch to prevent overload. The networks are updated every step once the experiece replay buffer, which has a size of 25000, is full. The type of exploration noise and learning rate scheduler are determined based on the optimization result, and the choices of the relevant parameters can be found in `ddpg.py`.
