@@ -29,7 +29,7 @@ Note that the code provided here is already the version after optimization, and 
 - **ddpg.py**: The main structure of the DDPG algorithm.
 - **networks.py**: The Actor and Critic networks applied in the DDPG algorithm.
 - **noise.py**: The action noise used to enhance the agent's exploration
-- **utils.py**: The evaluation method and other axuiliary functions, e.g., plotting. **(MOVE BUFFER PART TO DDPG)**
+- **utils.py**: The evaluation method and other axuiliary functions, e.g., plotting.
 
 ## Settings
 
