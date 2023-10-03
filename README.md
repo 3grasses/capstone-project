@@ -4,9 +4,9 @@
 
 (add vedio)
 
-This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The simulation enivronment is created by the `highway-env` in `gymnasium` (Leurent *et al.*, 2018) under continuous action space. ***The agent is able to learn to avoid collisions through iterative learning and reaches a stable state after training.***
+This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The simulation enivronment is created by the `highway-env` in `gymnasium` (Leurent *et al.*, 2018) under continuous action space. ***The agent is trained under an environment simulated by the highway-env package (Leurent *et al.*, 2018) in gynasium under continuous space. It is able to learn prevent collisions through iterative learning and reaches a stable state meanwhile maintainging realistic human driving behaviors.***
 
-DDPG is a deep reinforcement learning algorithm that combines the essence of Deep Q-Network (DQN) and Deterministic Policy Gradient (DPG). It preserves the features of experience replay buffer and seperate target networks in DQN to stabilize training process and reduce data correlation. However, unlike DQN which maps the Q-value function solely, DDPG uses an Actor-Critic network to learn the Q-value function and the policy concurrently to deal with continuous action space. More detailed explanations of the theoretical background of this are providied in `DDPG-workflow.pdf` in case of your interest. In addition, ***the adoption of the deterministic policy in DDPG allows it to reuse previous experience to update the networks and calculate gradients more efficiently, which is the major difference between it and the stochastic policy of Advantage Actor Critic (A2C).*** In this project, the DDPG method is explored due to the choice of continuous action space. 
+DDPG is a deep reinforcement learning algorithm that combines the essence of Deep Q-Network (DQN) and Deterministic Policy Gradient (DPG). It preserves the features of experience replay buffer and seperate target networks in DQN to stabilize training process and reduce data correlation. However, unlike DQN which maps the Q-value function solely, DDPG uses an Actor-Critic network to learn the Q-value function and the policy concurrently to deal with continuous action space. More detailed explanations of the theoretical background of this are provided in `DDPG-workflow.pdf` in case of your interest. In addition, ***the adoption of the deterministic policy in DDPG allows it to reuse previous experience to update the networks and calculate gradients more efficiently, which is the major difference between it and the stochastic policy of Advantage Actor Critic (A2C).*** In this project, the DDPG method is explored due to the choice of continuous action space. 
 
 Compared to previous studies, the significance of this project includes:
 
@@ -27,14 +27,17 @@ Note that the code provided here is already the version after optimization, and 
 ## Settings
 
 #### Environment
-The continuous action sapce adopted in this project. However, the range of steering range is confined to [-30, 30] degree based on the real-world scenario, and more details of the environment configuration can be checked in code files.
+A continuous action space which provides choices of acceleration and steering angle is adopted. However, the range of steering range is confined to [-30, 30] degree based on the real-world scenario, and the ***complete*** settings of the environment configuration can be found in `main.py`.
 
-#### Training
-The training epoch is 3,000 epochs with maximum steps of 300 for each epoch. This maximum limit is set to prevent the training time from becoming too long.
-OU-noise was used in this algorithm based on our optimization result. Learning rate... All the parameters were determined based on our optimization results will be not revealed in this porject.
+#### Reward Function
 The reward functions are modified in response to the choice of continuous action space. Several different methods were applied to prevent ego vehicles from spinning, moving backward, or remaining in an unrealistic speed.
 
+#### Training
+The training time is 3,000 epochs with 300 maximum steps in each epoch to prevent overloading. The networks are updated at every step once the experiece replay buffer, which is of size 25000, is full. The type of exploration noise and learning rate scheduler is determined based on the optimization result, and more details can be referred to `ddpg.py`.
+ 
 #### Evaluation
-The evaluation was 30 epochs.
+The metric used to evaluate the model perforamnce is the average reward over 30 epochs after removing regulations. The maximum step is extended to 500 epochs when evaluation for an unbiased result.
 
 ## Reference
+
+[1] Edouard, L. (2018). *An Environment for Autonomous Driving Decision-Making.* GitHub. https://github.com/eleurent/highway-env
