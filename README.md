@@ -2,7 +2,9 @@
 
 *This is a collaboration with Nattapol Hirattanapan, Zelin Zheng, Vivian Ying Ying Tong, Ma Kristin Ysabel Dela Cruz, and Ziming Fang for the Data Science Capstone Project in S1 2023 at the University of Sydney, Australia.*
 
-![004f728f-ba46-4827-a8c8-86ea968d73b2](https://github.com/3grasses/capstone-project/assets/146526540/e8f5a0fb-49db-44a9-ba29-795459ccae41)
+<p align="center">
+
+![demo](https://github.com/3grasses/capstone-project/assets/146526540/a4c43c12-f768-4c05-9501-ff5a1a8874e3)
 
 <p align="center">
 A demo video.
