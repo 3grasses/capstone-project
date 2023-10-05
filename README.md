@@ -2,7 +2,7 @@
 
 *This is a collaboration with Nattapol Hirattanapan, Zelin Zheng, Vivian Ying Ying Tong, Ma Kristin Ysabel Dela Cruz, and Ziming Fang for the Data Science Capstone Project in S1 2023 at the University of Sydney, Australia.*
 
-This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The agent is trained under an environment simulated by the highway-env package (Leurent *et al.*, 2018) in gynasium and learns to avoid collisions through iterative learning meanwhile maintain realistic human driving behaviors.
+This project is an implementation of an autonomous highway dirving algorithm based on the framework of Deep Deterministic Policy Gradient (DDPG). The agent is trained under an environment simulated by the highway-env package [[1]](#1) in gynasium and learns to avoid collisions through iterative learning meanwhile maintain realistic human driving behaviors.
 
 <br>
 
@@ -47,4 +47,4 @@ Mean of average test reward is used to evaluate the model performance in this pr
 
 ## Reference
 
-[1] Edouard, L. (2018). *An Environment for Autonomous Driving Decision-Making.* GitHub. https://github.com/eleurent/highway-env
+[1] Edouard Leurent. An Environment for Autonomous Driving Decision-Making. *GitHub.* https://github.com/eleurent/highway-env
