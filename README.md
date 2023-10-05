@@ -47,4 +47,4 @@ Mean of average test reward is used to evaluate the model performance in this pr
 
 ## Reference
 
-[1] Edouard Leurent. An Environment for Autonomous Driving Decision-Making. *GitHub.* https://github.com/eleurent/highway-env
+<a id="1">[1]</a> Edouard Leurent. An Environment for Autonomous Driving Decision-Making. *GitHub.* https://github.com/eleurent/highway-env
