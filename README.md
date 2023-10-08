@@ -6,11 +6,7 @@ This project is an implementation of an autonomous highway dirving algorithm bas
 
 <br>
 
-<p align="center">
- 
-![demo](https://github.com/3grasses/capstone-project/assets/146526540/effabaf2-169e-40b6-8ba5-d0430e3301fc)
-
-</p>
+![demo](https://github.com/3grasses/capstone-project/assets/146526540/f84ef758-4363-469b-8a21-ea29e2d83d21)
 
 <p align="center">
  <em> Learning outcome of the proposed DDPG algorithm. </em>
@@ -23,7 +19,7 @@ Compared to previous studies, the significance of this project includes:
 
 - Use continuous action space to increase the complexity of the enivronment and its potential for real-world applications.
 - Apply DDPG method to autonomous driving and optimize it on reward gain.
-- Introduce the concept of social awareness to make the agent adhere to realistic human driving behaviors or real-world traffic regulations, such as adhereing to safe sopping distance or speed limits.
+- Introduce the concept of social awareness to make the agent adhere to realistic human driving behaviors or real-world traffic regulations, such as adhereing to safe stopping distance or speed limits.
 
 Note that the code provided here is already the version after optimization, and it is proved to outperform the A2C model in `stable-baselines` by more than 500% in terms of average test reward.
 
