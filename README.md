@@ -6,9 +6,9 @@ This project is an implementation of an autonomous highway dirving algorithm bas
 
 <br>
 
-![demo](https://github.com/3grasses/capstone-project/assets/146526540/f84ef758-4363-469b-8a21-ea29e2d83d21)
-
-<p align="center">
+<p align="center"> 
+ <img src="https://github.com/3grasses/capstone-project/assets/146526540/f84ef758-4363-469b-8a21-ea29e2d83d21">
+ <br>
  <em> Learning outcome of the proposed DDPG algorithm. </em>
 </p>
 
