@@ -17,7 +17,7 @@ DDPG is a deep reinforcement learning algorithm that combines the essence of Dee
 
 Compared to previous studies, the significance of this project includes:
 
-- Use continuous action space to increase the complexity of the environment and its potential for real-world applications.
+- Use continuous action space to simulate real-world environment and enhance its potential for future applications.
 - Apply DDPG method to autonomous driving and optimize it on reward gain.
 - Introduce the concept of social awareness to make the agent adhere to realistic human driving behaviors or real-world traffic regulations, such as adhering to safe stopping distance or speed limits.
 
